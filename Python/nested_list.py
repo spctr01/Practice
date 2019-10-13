@@ -17,22 +17,28 @@ The lowest grade of 37.2 belongs to Tina. The second lowest grade of 37.21 belon
 #####################################################################
 if __name__ == '__main__':
     n = []
-    s =[] 
+    s=[] 
+    names = []
+
     for _ in range(int(input())):
         name = input()
         score = float(input())
 
-    
         n.append(name)
         n.append(score)
         s.append(list(n))
         n.clear()
-       
-    lower = s[0][1]
+
     for x in s:
-        if x[1] <= lower:
-            lower = x[1]
-            n.append(list(x))
-    
-    print(n)
+        if x[1] not in n:
+            n.append(x[1])
+
+    n.sort()
+
+    for x in s:
+        if n[1] == x[1]:
+            names.append(x[0])
+
+    names.sort()
+    for a in names : print(a)
 
