@@ -5,24 +5,27 @@ class  Node:
 
 class chain:
     def __init__(self):
-        self.head = Node()
+        self.head = None
 
-    def append(self,data):
-        new_node = Node(data)
-        current_node = self.head
-        while current_node.next != None:
-            current_node = current_node.next
-        current_node.next = new_node
+    def append(self, data):
+        new = Node(data)
+        if self.head == None:
+            self.head = new
+        else:
+            cur = self.head
+            while cur.next != None :
+                cur = cur.next
+            cur.next = new
        
 
     def display(self):
-        start = self.head
-        while start.next !=None:
-            start = start.next
-            print(start.data)
+        cur = self.head
+        while cur:
+            print(cur.data)
+            cur = cur.next
 
              
-
+#iterative method time = O(N)  space = O(1)
     def  rev(self):
         prev = None
         cur = self.head
@@ -33,7 +36,19 @@ class chain:
             cur = a
 
         self.head = prev 
-        
+
+# reverse usinf recursion t = O{n}  S= O(n)        
+    def rec_rev(self, node):
+        cur = node
+        if not cur or cur.next is None:
+            self.head = cur
+            return
+
+        self.rec_rev(cur.next)
+        cur.next.next = cur
+        cur.next = None
+
+
 
 
 c = chain()
@@ -46,4 +61,6 @@ c.display()
 print('reverse------------')
 c.rev()
 c.display()
-print(c.head.data)
+print('rec-----------------')
+c.rec_rev(c.head)
+c.display()
