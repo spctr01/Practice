@@ -1,30 +1,24 @@
-nums = [1, 2, 4, 5, 6, 7, 8, 9]
-target = 8
+arr = [1,2,4,5,6,7,9]
+target = 6
 
 left = 0
-right = len(nums) - 1
+right = len(arr)-1
 
 
-def binary_search(left, right):
+def b(left,right):
+  #loop until 2 pointer cross or at  same position
+  while left <= right:
+    mid = (left +right)//2
 
-    # loop over until 2 pointer are equal or cross each other
-    while left <= right:
+    if target< arr[mid]:
+      mid = b(left,mid-1)
 
-        mid = (left + right) // 2
+    if target > arr[mid]:
+      mid = b(mid+1, right)
 
-        # break condition (element not found if pointers cross)
-        if left > right:
-            return -1
+    #return ans found (if not </> so ans found)
+    return mid
 
-        # move pointer accordingly
-        else:
-            if target < nums[mid]:
-                mid = binary_search(left, mid - 1)
+  return -1
 
-            if target > nums[mid]:
-                mid = binary_search(mid + 1, right)
-
-        return mid
-
-
-print(binary_search(left, right))
+print(b( left,right))
