@@ -1,4 +1,4 @@
-'''
+"""
 Given a word, you need to judge whether the usage of capitals in it is right or not.
 
 We define the usage of capitals in a word to be right when one of the following cases holds:
@@ -20,18 +20,19 @@ Example 2:
 Input: "FlaG"
 Output: False
 
-'''
+"""
 
-#My solution 550 / 550 test cases passed.
-#Runtime: 28 ms
-#Memory Usage: 14 MB
+# My solution 550 / 550 test cases passed.
+# Runtime: 28 ms
+# Memory Usage: 14 MB
+
 
 class Solution:
     def detectCapitalUse(self, word: str) -> bool:
-        if word[0].isupper() and word[1:].islower() or word.isupper() or word.islower() :
+        if word[0].isupper() and word[1:].islower() or word.isupper() or word.islower():
             return True
         else:
             return False
 
 
-#solution :-  https://leetcode.com/articles/detect-capital/#
+# solution :-  https://leetcode.com/articles/detect-capital/#

@@ -1,4 +1,4 @@
-'''Consider a list (list = []). You can perform the following commands:
+"""Consider a list (list = []). You can perform the following commands:
 
 1.insert i e: Insert  integer  e at position i 
 
@@ -21,8 +21,5 @@ Each line i of the n subsequent lines contains one of the commands described abo
 #########Constraints
 The elements added to the list must be integers.
 
-'''
-#--------------------------------------------------------------------------------------------------------
-
-
-
+"""
+# --------------------------------------------------------------------------------------------------------

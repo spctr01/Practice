@@ -7,11 +7,11 @@ class Solution:
     def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
         dummy = current = ListNode()
         dummy.next = head
-        
+
         while current.next:
-            if current.next.val ==val:
+            if current.next.val == val:
                 current.next = current.next.next
-            else: 
+            else:
                 current = current.next
-            
+
         return dummy.next
