@@ -1,4 +1,7 @@
-class stack:
+from pipes import quote
+
+
+class Queue:
     """
     Queue using two stack
     """
@@ -25,9 +28,9 @@ class stack:
         return self.stack1
 
 
-s = stack()
-s.push(1)
-s.push(2)
-s.push(3)
-s.push(4)
-s.pop()
+q = Queue()
+q.push(1)
+q.push(2)
+q.push(3)
+q.push(4)
+quote.pop()
